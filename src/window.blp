@@ -1,0 +1,59 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $RevoltDmOnlyWindow : Adw.ApplicationWindow {
+	default-width: 360;
+	default-height: 600;
+	width-request: 360;
+	height-request: 295;
+		title: _("Revolt DM Only");
+
+		content: ScrolledWindow {
+				Adw.NavigationView nav_view {
+					Adw.NavigationPage dm_list_page {
+						title: bind template.title;
+
+            child: Adw.ToolbarView {
+              [top]
+              Adw.HeaderBar {
+                [end]
+                MenuButton {
+                  menu-model: menu_app;
+                  icon-name: "open-menu-symbolic";
+                  primary: true;
+                }
+              }
+
+              content: Adw.Clamp {
+							  maximum-size: 450;
+							  margin-top: 10;
+							  margin-bottom: 10;
+							  margin-start: 10;
+							  margin-end: 10;
+							  valign: start;
+
+							  ListBox dm_listbox {
+								  selection-mode: none;
+								  styles ["boxed-list"]
+							  }
+              };
+            };
+				}
+			}
+	};
+}
+
+
+menu menu_app {
+  section {
+    item {
+      label: _("Keyboard Shortcuts");
+      action: "app.shortcuts";
+    }
+
+    item {
+      label: _("About My App");
+      action: "app.about";
+    }
+  }
+}

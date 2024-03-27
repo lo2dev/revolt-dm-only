@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=revolt-dm-only
+Exec=revolt-dm-only
+Icon=io.github.lo2dev.revoltDmOnly
+Terminal=false
+Type=Application
+Categories=GTK;
+StartupNotify=true

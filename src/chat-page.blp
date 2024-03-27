@@ -1,0 +1,52 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $RevoltDmOnlyChatPage : Adw.NavigationPage {
+  child: Adw.ToolbarView {
+    [top]
+    Adw.HeaderBar {
+      [end]
+      MenuButton {
+
+      }
+    }
+
+    content: Adw.StatusPage {
+      title: "Chat";
+    };
+
+    [bottom]
+    ActionBar {
+      [center]
+      Adw.Clamp {
+        maximum-size: 450;
+
+        Box {
+          spacing: 5;
+
+          Button add_attachments_button {
+            label: _("Add attachments");
+            icon-name: "mail-attachment-symbolic";
+          }
+
+          Entry {
+            hexpand: true;
+            show-emoji-icon: true;
+            enable-emoji-completion: true;
+            max-length: 2000;
+            placeholder-text: _("Message this channel");
+          }
+
+          Button preferences_menu_button {
+            label: _("Send Message");
+            icon-name: "paper-plane-symbolic";
+
+            styles [
+              "suggested-action"
+            ]
+          }
+        }
+      }
+    }
+  };
+}

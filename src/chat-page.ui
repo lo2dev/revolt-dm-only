@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <template class="RevoltDmOnlyChatPage" parent="AdwNavigationPage">
+    <property name="child">
+      <object class="AdwToolbarView">
+        <child type="top">
+          <object class="AdwHeaderBar">
+            <child type="end">
+              <object class="GtkMenuButton"></object>
+            </child>
+          </object>
+        </child>
+        <property name="content">
+          <object class="AdwStatusPage">
+            <property name="title">Chat</property>
+          </object>
+        </property>
+        <child type="bottom">
+          <object class="GtkActionBar">
+            <child type="center">
+              <object class="AdwClamp">
+                <property name="maximum-size">450</property>
+                <child>
+                  <object class="GtkBox">
+                    <property name="spacing">5</property>
+                    <child>
+                      <object class="GtkButton" id="add_attachments_button">
+                        <property name="label" translatable="true">Add attachments</property>
+                        <property name="icon-name">mail-attachment-symbolic</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkEntry">
+                        <property name="hexpand">true</property>
+                        <property name="show-emoji-icon">true</property>
+                        <property name="enable-emoji-completion">true</property>
+                        <property name="max-length">2000</property>
+                        <property name="placeholder-text" translatable="true">Message this channel</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="preferences_menu_button">
+                        <property name="label" translatable="true">Send Message</property>
+                        <property name="icon-name">paper-plane-symbolic</property>
+                        <style>
+                          <class name="suggested-action"/>
+                        </style>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </property>
+  </template>
+</interface>
